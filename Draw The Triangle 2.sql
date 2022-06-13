@@ -1,6 +1,6 @@
 set serveroutput on;
 declare
-    R number(20);
+    R number(2);
 begin
     R:=20;
     for i in 1..R loop
