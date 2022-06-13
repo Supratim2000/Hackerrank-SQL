@@ -1,0 +1,1 @@
+select distinct f1.x,f1.y from (select row_number() over(order by x) as r1 ,x, y from functions) as f1 join (select row_number() over(order by x) as r2 ,x, y from functions) as f2 on f1.x=f2.y and f1.y=f2.x and f1.r1!=f2.r2 and f1.x<=f1.y order by f1.x;
