@@ -1,0 +1,1 @@
+select b.n,if(b.p is null,'Root',IF(child_count_table.count_child is null,'Leaf','Inner')) from BST as b left outer join (select tree.p as node,count(tree.n) as count_child from BST as tree group by tree.p) as child_count_table on b.n=child_count_table.node order by b.n;
